@@ -29,10 +29,21 @@ async function registerSubmitBean() {
                     console.log(filePath)
                     console.log(path.basename(filePath))
                     const fileName = path.basename(filePath)
-                    const ext = fileName.split(".")[fileName.split(".").length - 1]
-                    const msg = new webhook.MessageBuilder().setName("Mister Beam").setText(`\`\`\`${ext}\n
+                    let ext = fileName.split(".")[fileName.split(".").length - 1]
+                    if (ext === "tsx") ext = "ts"
+                    else if (ext === "jsx") ext = "js"
+                    const msg = new webhook.MessageBuilder()
+                        .setName("Mister Beam")
+                        .setAuthor("verity", "https://cdn.verity-network.de/verity/logo_1080x.png")
+                        .setTitle(fileName)
+                        .setDescription(
+                            `\`\`\`${ext}\n
 ${selected}
-\`\`\``)
+\`\`\``
+                        )
+                        .setFooter("Made with ❤️ by flaaaps", "")
+                        .setTime(Date.now() / 1000)
+
                     await hook.send(msg)
                 }
             }
