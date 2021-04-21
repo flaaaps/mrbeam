@@ -20,7 +20,17 @@
                 "command": "misterbeam.submitBeam",
                 "title": "Submit beam"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Mister Beam",
+            "properties": {
+                "misterbeam.discordWebhookUrl": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The discord webhook url to post your code in."
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run package",
