@@ -2,7 +2,11 @@
     "name": "misterbeam",
     "displayName": "Mister Beam",
     "publisher": "flaaaps",
-    "description": "",
+    "description": "Beam your code to your favorite discord server and share it with your friends.",
+    "repository": {
+        "url": "git://github.com/flaaaps/mrbeam.git",
+        "type": "git"
+    },
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.55.0"
