@@ -32,6 +32,16 @@
                     "type": "string",
                     "default": "",
                     "description": "The discord webhook url to post your code in."
+                },
+                "misterbeam.imageUrl": {
+                    "type": "string",
+                    "default": "",
+                    "description": "A url to your profile picture"
+                },
+                "misterbeam.username": {
+                    "type": "string",
+                    "default": "Bob",
+                    "description": "The name which shows up when you post your code."
                 }
             }
         }
