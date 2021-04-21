@@ -3,6 +3,7 @@
 import * as vscode from "vscode"
 import * as webhook from "webhook-discord"
 import * as path from "path"
+
 export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand("misterbeam.submitBeam", registerSubmitBean)
 
@@ -10,9 +11,10 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 async function registerSubmitBean() {
-    const discordWebhookUrl: string | undefined = vscode.workspace
-        .getConfiguration("misterbeam")
-        .get("discordWebhookUrl")
+    const config = vscode.workspace.getConfiguration("misterbeam")
+    const discordWebhookUrl: string | undefined = config.get("discordWebhookUrl")
+    const userImageUrl: string | undefined = config.get("imageUrl")
+    const username: string | undefined = config.get("username")
     if (!discordWebhookUrl) {
         vscode.window.showInformationMessage("Please specify a webhook url.")
     } else {
@@ -34,7 +36,7 @@ async function registerSubmitBean() {
                     else if (ext === "jsx") ext = "js"
                     const msg = new webhook.MessageBuilder()
                         .setName("Mister Beam")
-                        .setAuthor("verity", "https://cdn.verity-network.de/verity/logo_1080x.png")
+                        .setAuthor(username ?? "User", userImageUrl)
                         .setTitle(fileName)
                         .setDescription(
                             `\`\`\`${ext}\n
