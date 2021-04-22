@@ -17,3 +17,11 @@ This extension contributes the following settings:
 ## Extension Commands
 
 -   `misterbeam.submitBeam`: beams the selected code with syntax highlighting into the (via webhook) specified channel
+
+---
+
+## Logo
+
+The logo used within this extension is made by Freepik from www.flaticon.com"
+
+[License](http://flaticon.com/license/icon/2285537)
