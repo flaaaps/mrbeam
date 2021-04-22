@@ -2,9 +2,10 @@
     "name": "misterbeam",
     "displayName": "Mister Beam",
     "publisher": "flaaaps",
+    "icon": "./src/assets/logos/colored.png",
     "description": "Beam your code to your favorite discord server and share it with your friends.",
     "repository": {
-        "url": "git://github.com/flaaaps/mrbeam.git",
+        "url": "https://github.com/flaaaps/mrbeam.git",
         "type": "git"
     },
     "version": "1.0.3",
@@ -27,7 +28,7 @@
         "commands": [
             {
                 "command": "misterbeam.submitBeam",
-                "title": "Submit beam"
+                "title": "Mister Beam: Beam to discord channel"
             }
         ],
         "configuration": {
