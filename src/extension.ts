@@ -53,4 +53,6 @@ ${selected}
     }
 }
 
-export function deactivate() {}
+export function deactivate() {
+    console.log("Disabling extension")
+}
