@@ -2,7 +2,7 @@
     "name": "misterbeam",
     "displayName": "Mister Beam",
     "publisher": "flaaaps",
-    "icon": "./src/assets/logos/colored.png",
+    "icon": "images/logo-colored.png",
     "description": "Beam your code to your favorite discord server and share it with your friends.",
     "repository": {
         "url": "https://github.com/flaaaps/mrbeam.git",
