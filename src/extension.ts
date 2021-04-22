@@ -43,7 +43,7 @@ async function registerSubmitBean() {
 ${selected}
 \`\`\``
                     )
-                    .setFooter("Made with ❤️ by flaaaps", "https://content.wening.me/rocket.png")
+                    .setFooter("Made with ❤️ by flaaaps", "https://content.wening.me/mrbeam/logos/logo-white.png")
                     .setTime(Date.now() / 1000)
 
                 await hook.send(msg)
