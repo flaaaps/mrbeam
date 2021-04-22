@@ -25,33 +25,31 @@ async function registerSubmitBean() {
         let selected = editor?.document.getText(editor.selection)
         if (!selected) {
             console.log("Nothing selected")
+            vscode.window.showInformationMessage("Select some code to beam up.")
         } else {
-            if (cursorPosition) {
-                if (filePath) {
-                    console.log(filePath)
-                    console.log(path.basename(filePath))
-                    const fileName = path.basename(filePath)
-                    let ext = fileName.split(".")[fileName.split(".").length - 1]
-                    if (ext === "tsx") ext = "ts"
-                    else if (ext === "jsx") ext = "js"
-                    const msg = new webhook.MessageBuilder()
-                        .setName("Mister Beam")
-                        .setAuthor(username ?? "User", userImageUrl)
-                        .setTitle(fileName)
-                        .setDescription(
-                            `\`\`\`${ext}\n
+            if (cursorPosition && filePath) {
+                console.log(filePath)
+                console.log(path.basename(filePath))
+                const fileName = path.basename(filePath)
+                let ext = fileName.split(".")[fileName.split(".").length - 1]
+                if (ext === "tsx") ext = "ts"
+                else if (ext === "jsx") ext = "js"
+                const msg = new webhook.MessageBuilder()
+                    .setName("Mister Beam")
+                    .setAuthor(username ?? "User", userImageUrl)
+                    .setTitle(fileName)
+                    .setDescription(
+                        `\`\`\`${ext}\n
 ${selected}
 \`\`\``
-                        )
-                        .setFooter("Made with ❤️ by flaaaps", "")
-                        .setTime(Date.now() / 1000)
+                    )
+                    .setFooter("Made with ❤️ by flaaaps", "https://content.wening.me/rocket.png")
+                    .setTime(Date.now() / 1000)
 
-                    await hook.send(msg)
-                }
+                await hook.send(msg)
+                vscode.window.showInformationMessage("Beamed it up!")
             }
         }
-
-        vscode.window.showInformationMessage("Beamed it up!")
     }
 }
 
