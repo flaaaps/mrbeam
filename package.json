@@ -14,6 +14,11 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "Discord",
+        "Beam",
+        "Code Share"
+    ],
     "activationEvents": [
         "onCommand:misterbeam.submitBeam"
     ],
