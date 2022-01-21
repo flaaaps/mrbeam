@@ -28,7 +28,7 @@
         "commands": [
             {
                 "command": "misterbeam.submitBeam",
-                "title": "Mister Beam: Beam to discord channel"
+                "title": "Mister Beam: Beam selected code to a specific discord channel"
             }
         ],
         "configuration": {
